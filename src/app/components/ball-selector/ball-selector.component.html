@@ -1,0 +1,19 @@
+<div class="ball-selector">
+  <h1>Numbers</h1>
+
+  <div class="ball-selector__balls-container">
+    <div
+      *ngFor="let ball of balls"
+      class="ball"
+      [class.ball--disabled]="ball.isSelected"
+      [ngStyle]="{ 'background-color': ball.color }"
+      (click)="onSelectedBall(ball)"
+    >
+      {{ ball.number }}
+    </div>
+  </div>
+
+  <div class="ball-selector__clear-button-container">
+    <button (click)="clearSelection()">Clear Selection</button>
+  </div>
+</div>

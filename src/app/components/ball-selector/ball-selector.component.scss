@@ -1,0 +1,31 @@
+@import "../../../assets/styles/variables";
+
+.ball-selector {
+  background-color: $color-white;
+  padding: 10px;
+
+  &__balls-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+  &__clear-button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  &__clear-button-container button {
+    background-color: $color-white;
+    border: none;
+    color: $color-blue-ligth;
+    font-size: 16px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="results-container">
+  <div class="results-container__feedback">
+    <h2>Results</h2>
+    <div class="ball" [ngStyle]="{ 'background-color': balls[result - 1]?.color }">{{ result }}</div>
+    <div
+      class="results-container__message"
+      [ngClass]="!isWinner ? 'results-container__message--loser' : 'results-container__message--winner'"
+    >
+      {{ message }}
+    </div>
+    <button (click)="restart()">Restart</button>
+  </div>
+</div>

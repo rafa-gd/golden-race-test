@@ -1,0 +1,38 @@
+@import "../../../assets/styles/variables";
+
+.bet-slip-container {
+  height: 100%;
+  background-color: $color-white;
+  padding: 10px;
+  text-align: center;
+
+  &__balls-selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    margin: 20px 0;
+  }
+
+  &__label {
+    background-color: $color-gray-ligth;
+    padding: 5px 5px 8px 5px;
+  }
+
+  &__input {
+    padding: 5px;
+    text-align: right;
+  }
+
+  &__error-text {
+    margin: 20px;
+    color: $color-red;
+    font-weight: bold;
+  }
+
+  &__total {
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

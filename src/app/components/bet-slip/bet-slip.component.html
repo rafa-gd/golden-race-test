@@ -1,0 +1,17 @@
+<div class="bet-slip-container">
+  <div class="bet-slip-container__balls-selection">
+    <div *ngFor="let ball of selectedBalls; trackBy: trackByBall" class="ball" [ngStyle]="{ 'background-color': ball.color }">
+      {{ ball.number }}
+    </div>
+  </div>
+
+  <form [formGroup]="betForm" (ngSubmit)="placeBet()">
+    <label class="bet-slip-container__label"> {{ selectedBalls.length }}x </label>
+    <input type="number" formControlName="bet" class="bet-slip-container__input" />
+    <div *ngIf="betForm.controls['bet'].errors?.['min']" class="bet-slip-container__error-text">Minimum bet is 5 €</div>
+    <p class="bet-slip-container__total">Total to win: {{ selectedBalls.length * betForm.controls["bet"].value * 1.5 }}€</p>
+    <button type="submit" [disabled]="!betForm.valid || selectedBalls.length === 0">Place bet</button>
+  </form>
+</div>
+
+<app-results *ngIf="result !== 0" [result]="result" (reset)="reset()"> </app-results>
